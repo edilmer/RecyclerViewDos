@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickButton(View view){
         if (isOnLine()){
             MyTask task = new MyTask();
-            task.execute("https://jsonplaceholder.typicode.com/posts");
+            task.execute("https://jsonplaceholder.typicode.com/users");
         }else {
             Toast.makeText(this, "Sin conexión", Toast.LENGTH_SHORT).show();
         }
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         adapterUser = new UserAdapter(getApplicationContext(), myPost);
 
         // inyectar el item en mi RecyclerView
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapterUser);
 
     }
 
